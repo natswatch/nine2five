@@ -4,8 +4,6 @@ body {
   line-height: 1;
 }
 
-
-
 textarea {
   background: transparent;
   border: none;
@@ -47,7 +45,6 @@ textarea {
   height: 80px;
   border: 1px solid white;
   margin-bottom: 10px;
-
 }
 
 .hour {

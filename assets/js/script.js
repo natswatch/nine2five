@@ -1,5 +1,3 @@
-
-
 var lastUpdate = 0;
 
 // displays current date and time
@@ -26,7 +24,6 @@ $(".saveBtn").click(function() {
          .val();
 
     localStorage.setItem(eventTime, eventText);
-    
 });
 
 // displays saved event upon page load
@@ -38,7 +35,6 @@ var loadEvents = function() {
         var timeId = ("#" + time);
         $(timeId).find("textarea").val(description);
     }
-
 };
 
 // changes background color for past, present, and future hours
@@ -48,8 +44,6 @@ var colorTextarea = function() {
     // convert string to integer
     var hourNum = +currentHour;
     var timeId = "#" + currentHour;
-
-    console.log(hourNum);
 
     for(var i=9; i<18; i++){
         if (i == hourNum) {
@@ -62,10 +56,8 @@ var colorTextarea = function() {
             $("#" + i).find("textarea").addClass("future");
         }
     }
-
     lastUpdate = currentHour;
 };
-
 
 setInterval(getDate, 1000);
 colorTextarea();
