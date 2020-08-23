@@ -1,5 +1,13 @@
 var events = {};
 
+var toDay = function() {
+
+    var current = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
+    var todaysDate = $("#currentDay").text(current);
+}
+
+setInterval(toDay, 1000);
+
 var createEvent = function (eventText) {
     
 }
@@ -8,7 +16,8 @@ $(".saveBtn").click(function() {
     var eventText = $("#eventForm").val();
     var eventTime = $(this)
         .closest(".row")
-        .attr("id");
+        .attr("id")
+        .replace("-", " ");
 
     var events = [{
         time: eventTime,
