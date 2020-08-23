@@ -1,46 +1,51 @@
-var events = {};
 
 var toDay = function() {
-
     var current = moment().format('dddd, MMMM Do YYYY, h:mm:ss a');
     var todaysDate = $("#currentDay").text(current);
 }
 
 setInterval(toDay, 1000);
 
-var createEvent = function (eventText) {
-    
-}
-
 $(".saveBtn").click(function() {
-    var eventText = $("#eventForm").val();
+    
     var eventTime = $(this)
         .closest(".row")
-        .attr("id")
-        .replace("-", " ");
+        .attr("id");
+        
+    var eventText = $(this)
+         .closest(".row")
+         .find("textarea")
+         .val();
 
-    var events = [{
-        time: eventTime,
-        description: eventText
-    }];
-
-    console.log(events);
+    localStorage.setItem(eventTime, eventText);
+    
 });
 
 var loadEvents = function() {
-    events = JSON.parse(localStorage.getItem("events"));
-  
-    // if nothing in localStorage, create a new object to track all task status arrays
-    if (!events) {
-      events = [{time: 0, description: ""}];
-    }
-  
-    // loop over object properties
-    arr.forEach(function(events) {
-        createTask(events.time, events.description);
-      });
-  };
 
-var saveEvent = function() {
-    localStorage.setItem("events", JSON.stringify(events));
+    for (var i=0; i<localStorage.length; i++) {
+        var time = localStorage.key(i);
+        var description = localStorage.getItem(time);
+
+        var timeId = ("#" + time);
+        $(timeId).find("textarea").val(description);
+    }
+
 };
+
+var currentTimeId = function() {
+    var currentHour = moment().format('h');
+    var amPm = moment().format('A');
+    var timeId = "#" + currentHour + "-" + amPm; 
+    return timeId;
+};
+
+var colorCode = function() {
+
+
+
+};
+
+
+
+loadEvents();
