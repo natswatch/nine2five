@@ -3,9 +3,9 @@ Daily planner displays LIVE time blocks, color-coded for past, present and futur
 
 
 # Deployed URL
-https://natswatch.github.io/
+https://natswatch.github.io/nine2five
 
 # Github Repo URL
-https://github.com/natswatch/
+https://github.com/natswatch/nine2five
 
 ![image](https://user-images.githubusercontent.com/24613646/90992079-4b3bfe00-e562-11ea-8525-5f973f6fd067.png)
