@@ -44,7 +44,7 @@ textarea {
   white-space: pre-wrap;
   height: 80px;
   border: 1px solid white;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .hour {
@@ -67,7 +67,6 @@ textarea {
 .future {
   background-color: #77dd77;
 }
-
 
 .saveBtn {
   border-left: 1px solid black;
